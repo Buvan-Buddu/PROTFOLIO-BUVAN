@@ -398,6 +398,39 @@ body {
     box-shadow: 0 12px 30px rgba(59, 130, 246, 0.5);
 }
 
+/* About illustration and profile image */
+.about-illustration {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+.illustration-card {
+    width: 280px;
+    max-width: 100%;
+}
+.illustration-placeholder {
+    width: 100%;
+    height: 360px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(2,6,23,0.08);
+    background: #ffffff;
+    display: block;
+}
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 35%;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .illustration-placeholder { height: 280px; }
+    .name { font-size: 3rem; }
+}
+
 .btn-outline {
     background: var(--white);
     color: var(--blue-medium);
@@ -3093,6 +3126,329 @@ body {
 
     .certificates-list {
         grid-template-columns: 1fr;
+    }
+}
+
+/* ==========================================================================
+   ADDED UPGRADES (Dark Mode, Project Previews, Custom Toggle, Mobile Fixes)
+   ========================================================================= */
+
+/* Dark Mode Colors */
+body.dark-mode {
+    --gray-light: #0f172a; /* slate-900 */
+    --white: #1e293b; /* slate-800 */
+    --gray-medium: #334155; /* slate-700 */
+    --text-dark: #f8fafc; /* slate-50 */
+    --text-gray: #94a3b8; /* slate-400 */
+    --blue-soft: #1e3a8a; /* deep blue */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.5);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.6);
+}
+
+/* Specific elements adjustments for dark mode */
+body.dark-mode .site-header {
+    background: rgba(30, 41, 59, 0.95);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .main-nav a {
+    color: #f8fafc;
+}
+
+body.dark-mode .main-nav a:hover,
+body.dark-mode .main-nav a.active {
+    color: var(--blue-light);
+}
+
+body.dark-mode .brand {
+    color: var(--blue-light);
+}
+
+body.dark-mode .hero {
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+}
+
+body.dark-mode .attribute-card,
+body.dark-mode .skill-card,
+body.dark-mode .experience-card,
+body.dark-mode .education-card,
+body.dark-mode .certification-card,
+body.dark-mode .project-card,
+body.dark-mode .other-link-card,
+body.dark-mode .contact-card,
+body.dark-mode .modal-content,
+body.dark-mode .fun-fact-card,
+body.dark-mode .badge-item,
+body.dark-mode .certificate-list-item {
+    background: #1e293b;
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+body.dark-mode .toggle-btn {
+    border-color: var(--blue-light);
+    color: #f8fafc;
+}
+
+body.dark-mode .toggle-btn.active {
+    background: var(--blue-medium);
+}
+
+body.dark-mode .skills-category {
+    background: rgba(99, 102, 241, 0.06);
+    border-color: rgba(99, 102, 241, 0.2);
+}
+
+body.dark-mode .skill-tag {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(59, 130, 246, 0.1));
+    border-color: rgba(99, 102, 241, 0.3);
+    color: #f8fafc;
+}
+
+body.dark-mode .skill-tag:hover {
+    border-color: var(--blue-light);
+}
+
+body.dark-mode .progress-bar {
+    background: #334155;
+}
+
+body.dark-mode .social-icon {
+    background: #334155;
+    color: #f8fafc;
+}
+
+body.dark-mode .social-icon:hover {
+    background: var(--blue-medium);
+}
+
+body.dark-mode .btn-outline {
+    background: #1e293b;
+    color: var(--blue-light);
+    border-color: var(--blue-light);
+}
+
+body.dark-mode .btn-outline:hover {
+    background: var(--blue-medium);
+    color: #ffffff;
+}
+
+body.dark-mode .form-group label {
+    color: #f8fafc;
+}
+
+body.dark-mode .form-group input,
+body.dark-mode .form-group textarea {
+    background: #334155;
+    border-color: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+}
+
+body.dark-mode .form-group input::placeholder,
+body.dark-mode .form-group textarea::placeholder {
+    color: #94a3b8;
+}
+
+body.dark-mode .modal-close {
+    color: #ffffff;
+}
+
+body.dark-mode .btn-cancel {
+    background: #334155;
+    color: #ffffff;
+}
+
+body.dark-mode .btn-download-resume {
+    background: #1e3a8a;
+    border-color: rgba(255, 255, 255, 0.1);
+    color: var(--blue-light);
+}
+
+body.dark-mode .btn-download-resume:hover {
+    background: var(--blue-medium);
+    color: #ffffff;
+}
+
+body.dark-mode .illustration-card {
+    background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+    box-shadow: 0 20px 60px rgba(15, 23, 42, 0.8);
+}
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    color: var(--text-dark);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    margin-left: 15px;
+    outline: none;
+    vertical-align: middle;
+}
+
+.theme-toggle-btn:hover {
+    background: var(--blue-soft);
+    color: var(--blue-medium);
+    transform: rotate(15deg) scale(1.1);
+}
+
+body.dark-mode .theme-toggle-btn {
+    color: #fbbf24; /* moon icon glowing color */
+}
+
+body.dark-mode .theme-toggle-btn:hover {
+    background: rgba(251, 191, 36, 0.15);
+}
+
+/* Project Previews */
+.project-preview-container {
+    width: 100%;
+    height: 190px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 15px 0 20px 0;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(59, 130, 246, 0.15);
+    background: #f1f5f9;
+    position: relative;
+}
+
+.project-preview-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.project-card:hover .project-preview-image {
+    transform: scale(1.06);
+}
+
+/* Experience company logo correction */
+.experience-logo-img {
+    max-width: 100%;
+    max-height: 120px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+/* Mobile Responsiveness Optimizations (320px - 480px) */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 1.25rem;
+    }
+
+    .section {
+        padding: 4rem 0;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+    }
+
+    .skills-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+    }
+
+    .skills-category {
+        padding: 1.5rem 1.2rem;
+    }
+
+    .skills-attributes {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .project-card {
+        border-radius: 16px;
+    }
+
+    .project-body {
+        padding: 1.5rem 1.2rem;
+    }
+
+    .project-preview-container {
+        height: 160px;
+        margin: 10px 0 15px 0;
+    }
+
+    .education-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .education-card, 
+    .certification-card {
+        padding: 1.5rem 1.2rem;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .education-card .year, 
+    .certification-card .year {
+        position: static;
+        margin-top: 0.5rem;
+        display: inline-block;
+    }
+
+    .others-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .contact-card {
+        padding: 2.5rem 1.2rem;
+    }
+
+    .contact-heading {
+        font-size: 1.8rem;
+    }
+
+    .modal-content {
+        width: 95%;
+        padding: 1.5rem;
+    }
+
+    .site-header {
+        padding: 0.8rem 1rem;
+        position: static; /* Let it flow on tiny screens to avoid layout overlap */
+    }
+
+    .header-inner {
+        flex-direction: column;
+        gap: 0.8rem;
+        text-align: center;
+    }
+
+    .main-nav {
+        gap: 0.6rem 0.8rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .main-nav a {
+        font-size: 0.9rem;
+    }
+    
+    .theme-toggle-btn {
+        margin-left: 5px;
+    }
+
+    .hero {
+        padding-top: 2rem;
     }
 }
 
