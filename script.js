@@ -115,27 +115,40 @@ document.querySelectorAll('.experience-card').forEach(card => {
     });
 });
 
-// Fade in animation on scroll
-const fadeInElements = document.querySelectorAll('.section');
+// ============================================
+// DARK / LIGHT MODE TOGGLE
+// ============================================
 
-const fadeInObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
+const themeToggle = document.getElementById('themeToggle');
+const sunIcon = themeToggle ? themeToggle.querySelector('.sun-icon') : null;
+const moonIcon = themeToggle ? themeToggle.querySelector('.moon-icon') : null;
+
+const applyTheme = (theme) => {
+    if (theme === 'dark') {
+        document.body.classList.add('dark-mode');
+        if (sunIcon) sunIcon.style.display = 'none';
+        if (moonIcon) moonIcon.style.display = 'block';
+    } else {
+        document.body.classList.remove('dark-mode');
+        if (sunIcon) sunIcon.style.display = 'block';
+        if (moonIcon) moonIcon.style.display = 'none';
+    }
+};
+
+// Check user theme preference
+const savedTheme = localStorage.getItem('theme');
+const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+const initialTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+applyTheme(initialTheme);
+
+if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+        const isDark = document.body.classList.contains('dark-mode');
+        const newTheme = isDark ? 'light' : 'dark';
+        applyTheme(newTheme);
+        localStorage.setItem('theme', newTheme);
     });
-}, {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-});
-
-fadeInElements.forEach(element => {
-    element.style.opacity = '0';
-    element.style.transform = 'translateY(30px)';
-    element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    fadeInObserver.observe(element);
-});
+}
 
 // Header background on scroll
 const header = document.querySelector('.site-header');
@@ -159,14 +172,26 @@ const navLinks = document.querySelectorAll('.main-nav a');
 
 window.addEventListener('scroll', () => {
     let current = '';
+    const scrollPosition = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
     
     sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (window.pageYOffset >= sectionTop - 150) {
-            current = section.getAttribute('id');
+        const sectionTop = section.offsetTop - 160; // offset for navbar height
+        const sectionHeight = section.offsetHeight;
+        const sectionId = section.getAttribute('id');
+        
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            current = sectionId;
         }
     });
+    
+    // Fallback: highlight Contact if scrolled to the absolute bottom of the page
+    if ((window.innerHeight + scrollPosition) >= document.documentElement.scrollHeight - 50) {
+        current = 'contact';
+    }
+    
+    if (!current && sections.length > 0) {
+        current = sections[0].getAttribute('id');
+    }
     
     navLinks.forEach(link => {
         link.classList.remove('active');
@@ -195,47 +220,8 @@ const closeModalBtn = document.getElementById('closeContactModal');
 const cancelBtn = document.getElementById('cancelContactForm');
 const contactForm = document.getElementById('contactForm');
 
-function submitToFormSubmit(payload) {
-    const iframeName = `formsubmit-frame-${Date.now()}`;
-    const iframe = document.createElement('iframe');
-    iframe.name = iframeName;
-    iframe.style.display = 'none';
-    document.body.appendChild(iframe);
-
-    const form = document.createElement('form');
-    form.method = 'POST';
-    form.action = 'https://formsubmit.co/vbuvanraj@gmail.com';
-    form.target = iframeName;
-    form.style.display = 'none';
-
-    const fields = {
-        name: payload.name,
-        email: payload.email,
-        message: payload.message,
-        _subject: payload._subject,
-        _captcha: payload._captcha
-    };
-
-    if (payload.address) {
-        fields.address = payload.address;
-    }
-
-    Object.entries(fields).forEach(([key, value]) => {
-        const input = document.createElement('input');
-        input.type = 'hidden';
-        input.name = key;
-        input.value = value;
-        form.appendChild(input);
-    });
-
-    document.body.appendChild(form);
-    form.submit();
-
-    setTimeout(() => {
-        form.remove();
-        iframe.remove();
-    }, 4000);
-}
+// Formspree Configuration (Replace with your own Formspree Form ID)
+const FORMSPREE_FORM_ID = 'YOUR_FORMSPREE_FORM_ID'; // Replace this with your form ID (e.g. 'mvgonpgo')
 
 // Open Modal
 if (openModalBtn) {
@@ -255,8 +241,8 @@ function closeModal() {
         // Remove success/error messages
         const successMsg = contactForm.querySelector('.form-success');
         const errorMsg = contactForm.querySelector('.form-error');
-        if (successMsg) successMsg.classList.remove('active');
-        if (errorMsg) errorMsg.classList.remove('active');
+        if (successMsg) successMsg.remove();
+        if (errorMsg) errorMsg.remove();
     }
 }
 
@@ -283,7 +269,7 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-// Form Submission
+// Form Submission using Formspree Fetch API
 if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -291,8 +277,6 @@ if (contactForm) {
         // Get form values
         const name = document.getElementById('contactName').value.trim();
         const email = document.getElementById('contactEmail').value.trim();
-        const addressField = document.getElementById('contactAddress');
-        const address = addressField ? addressField.value.trim() : '';
         const message = document.getElementById('contactMessage').value.trim();
         
         // Remove existing messages
@@ -321,46 +305,44 @@ if (contactForm) {
             submitBtn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> Sending...';
         }
         
-        const payload = {
-            name,
-            email,
-            message,
-            _subject: `Contact from Portfolio: ${name}`,
-            _captcha: 'false'
-        };
-
-        if (address) {
-            payload.address = address;
-        }
-
-        try {
-            submitToFormSubmit(payload);
-            showFormSuccess('Message submitted. If this is the first request, approve FormSubmit activation email in vbuvanraj@gmail.com, then future messages will arrive normally.');
-
-            if (submitBtn) {
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg> Send Message';
+        // Send request to Formspree
+        fetch(`https://formspree.io/f/${FORMSPREE_FORM_ID}`, {
+            method: 'POST',
+            body: JSON.stringify({ name, email, message, _subject: `Contact from Portfolio: ${name}` }),
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
             }
-
-            setTimeout(() => {
+        })
+        .then(response => {
+            if (response.ok) {
+                showFormSuccess('Thank you! Your message has been sent successfully.');
                 contactForm.reset();
-                closeModal();
-            }, 3000);
-        } catch (error) {
-            showFormError('Submission failed. Please check internet connection and try again.');
+                setTimeout(closeModal, 2500);
+            } else {
+                return response.json().then(data => {
+                    if (FORMSPREE_FORM_ID === 'YOUR_FORMSPREE_FORM_ID') {
+                        throw new Error('Formspree Form ID is not configured. Please edit script.js and configure your FORMSPREE_FORM_ID.');
+                    } else {
+                        throw new Error(data.error || 'Server returned an error.');
+                    }
+                });
+            }
+        })
+        .catch(error => {
+            showFormError(error.message || 'Submission failed. Please check your network connection and try again.');
+        })
+        .finally(() => {
             if (submitBtn) {
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg> Send Message';
             }
-        }
+        });
     });
 }
 
 // Show success message
 function showFormSuccess(message) {
-    const existingSuccess = contactForm.querySelector('.form-success');
-    if (existingSuccess) existingSuccess.remove();
-    
     const successDiv = document.createElement('div');
     successDiv.className = 'form-success active';
     successDiv.innerHTML = `
@@ -375,15 +357,10 @@ function showFormSuccess(message) {
 
 // Show error message
 function showFormError(message) {
-    const existingError = contactForm.querySelector('.form-error');
-    if (existingError) existingError.remove();
-    
     const errorDiv = document.createElement('div');
     errorDiv.className = 'form-error active';
     errorDiv.textContent = message;
     contactForm.insertBefore(errorDiv, contactForm.firstChild);
-    
-    // Scroll to error
     errorDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
@@ -508,6 +485,16 @@ window.addEventListener('scroll', () => {
 
 // Initialize animations on page load
 window.addEventListener('load', () => {
+    // Initialize AOS.js
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            duration: 800,
+            once: true,
+            mirror: false,
+            offset: 100
+        });
+    }
+
     // Trigger initial animations
     setTimeout(() => {
         document.body.style.opacity = '1';
@@ -601,10 +588,14 @@ if (canvas) {
         }
         
         draw() {
-      ctx.save();
+            ctx.save();
             ctx.globalAlpha = this.opacity;
-            ctx.fillStyle = this.color;
-            ctx.strokeStyle = this.color;
+            const isDarkMode = document.body.classList.contains('dark-mode');
+            const color = isDarkMode 
+                ? (this.color.includes('59, 130') ? 'rgba(96, 165, 250, 0.3)' : 'rgba(51, 65, 85, 0.4)')
+                : this.color;
+            ctx.fillStyle = color;
+            ctx.strokeStyle = color;
             
             if (this.type === 'circle') {
                 ctx.beginPath();
@@ -614,9 +605,9 @@ if (canvas) {
                 ctx.fillRect(this.x - this.size, this.y - this.size, this.size * 2, this.size * 2);
             } else {
                 ctx.lineWidth = 2;
-        ctx.beginPath();
+                ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size * 1.5, 0, Math.PI * 2);
-        ctx.stroke();
+                ctx.stroke();
             }
             
             ctx.restore();
@@ -688,9 +679,16 @@ if (canvas) {
         
         // Draw gradient background
         const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-        gradient.addColorStop(0, 'rgba(248, 250, 252, 0.8)');
-        gradient.addColorStop(0.5, 'rgba(224, 242, 254, 0.6)');
-        gradient.addColorStop(1, 'rgba(248, 250, 252, 0.8)');
+        const isDarkMode = document.body.classList.contains('dark-mode');
+        if (isDarkMode) {
+            gradient.addColorStop(0, 'rgba(15, 23, 42, 0.95)'); // slate-900
+            gradient.addColorStop(0.5, 'rgba(30, 41, 59, 0.9)'); // slate-800
+            gradient.addColorStop(1, 'rgba(15, 23, 42, 0.95)');
+        } else {
+            gradient.addColorStop(0, 'rgba(248, 250, 252, 0.8)');
+            gradient.addColorStop(0.5, 'rgba(224, 242, 254, 0.6)');
+            gradient.addColorStop(1, 'rgba(248, 250, 252, 0.8)');
+        }
         ctx.fillStyle = gradient;
         ctx.fillRect(0, 0, canvas.width, canvas.height);
         
@@ -723,7 +721,7 @@ if (canvas) {
         });
         
         // Draw connecting lines between nearby particles
-        ctx.strokeStyle = 'rgba(59, 130, 246, 0.1)';
+        ctx.strokeStyle = isDarkMode ? 'rgba(96, 165, 250, 0.08)' : 'rgba(59, 130, 246, 0.1)';
         ctx.lineWidth = 1;
         
         for (let i = 0; i < particles.length; i++) {
