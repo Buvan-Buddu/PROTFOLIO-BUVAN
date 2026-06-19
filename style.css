@@ -1,5 +1,4 @@
 
-
    .skills-toggle {
     display: flex;
     justify-content: center;
@@ -1871,6 +1870,17 @@ body {
     z-index: 1;
 }
 
+.contact-cta-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
 .btn-say-hello {
     display: inline-flex;
     align-items: center;
@@ -1882,7 +1892,6 @@ body {
     text-decoration: none;
     font-weight: 600;
     font-size: 1.1rem;
-    margin-bottom: 2rem;
     transition: all 0.3s ease;
     box-shadow: var(--shadow-md);
     border: none;
@@ -1894,6 +1903,35 @@ body {
     background: var(--blue-dark);
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
+}
+
+.btn-book-call {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: var(--white);
+    color: var(--blue-medium);
+    padding: 1rem 2.5rem;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-md);
+    border: 2px solid var(--blue-medium);
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.btn-book-call:hover {
+    background: var(--blue-medium);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn-book-call svg {
+    flex-shrink: 0;
 }
 
 .contact-social {
@@ -2348,6 +2386,17 @@ body {
         right: 1rem;
         width: 35px;
         height: 35px;
+    }
+
+    .contact-cta-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn-say-hello,
+    .btn-book-call {
+        width: 100%;
+        justify-content: center;
     }
 }
 
@@ -3220,6 +3269,17 @@ body.dark-mode .btn-download-resume {
 }
 
 body.dark-mode .btn-download-resume:hover {
+    background: var(--blue-medium);
+    color: #ffffff;
+}
+
+body.dark-mode .btn-book-call {
+    background: #1e293b;
+    color: var(--blue-light);
+    border-color: var(--blue-light);
+}
+
+body.dark-mode .btn-book-call:hover {
     background: var(--blue-medium);
     color: #ffffff;
 }
