@@ -2,7 +2,7 @@ Buvanraj V — Personal Portfolio Website
 
 A modern, responsive personal portfolio website showcasing my background, skills, work experience, and projects as a Full Stack Developer and AI/ML enthusiast. Built with HTML, CSS, and JavaScript, featuring smooth animations, a light/dark theme toggle, and an interactive contact form.
 
-Live Demo: https://buvan-buddu.github.io/PROTOFILO-BUVAN/
+Live Demo: https://buvan-buddu.github.io/PROTFOLIO-BUVAN/
 
 Overview
 
