@@ -5,18 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buvanraj V | Portfolio</title>
-    
-    
+
     <meta name="description" content="Buvanraj V - Full Stack Developer & AI/ML Developer Intern. Explore my portfolio website built with React.js, Node.js, FastAPI, and Machine Learning.">
     <meta name="keywords" content="Buvanraj V, Portfolio, Full Stack Developer, AI ML Developer, Infosys Springboard, React, Node.js, FastAPI, Python">
-    
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="http://buvan-buddu.github.io/PROTOFILO-BUVAN/">
     <meta property="og:title" content="Buvanraj V | Portfolio">
     <meta property="og:description" content="AI/ML Developer Intern at Infosys, building scalable web applications with React.js, Node.js, and FastAPI.">
     <meta property="og:image" content="BUVAN-PROFILE.jpeg">
-
 
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="http://buvan-buddu.github.io/PROTOFILO-BUVAN/">
@@ -25,30 +22,32 @@
     <meta property="twitter:image" content="BUVAN-PROFILE.jpeg">
 
     <link rel="icon" type="image/png" href="favicon.png">
-    
+
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 </head>
 
 <body>
-    </div>
-   
     <canvas id="flowingBackground"></canvas>
 
-
     <header class="site-header">
-        <div class="btn-group">
+        <div class="header-inner">
             <a href="#home" class="brand">
                 <img src="B-ICON-26.jpeg" alt="Buvanraj V Avatar" class="brand-avatar">
-                
             </a>
-            <nav class="main-nav">
+
+            <button id="navToggle" class="nav-toggle-btn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mainNav">
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </button>
+
+            <nav class="main-nav" id="mainNav">
                 <a href="#home"><svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-8 9 8"></path><path d="M5 10v10a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V10"></path></svg> Home</a>
                 <a href="#about"><svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> About</a>
                 <a href="#skills"><svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg> Skills</a>
@@ -57,6 +56,7 @@
                 <a href="#projects"><svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"></path></svg> Projects</a>
                 <a href="#others"><svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="3" width="7" height="7" rx="1"></rect><rect x="3" y="14" width="7" height="7" rx="1"></rect><rect x="14" y="14" width="7" height="7" rx="1"></rect></svg> Others</a>
                 <a href="#contact"><svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg> Contact</a>
+
                 <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle dark mode">
                     <svg class="sun-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
                         <circle cx="12" cy="12" r="5"></circle>
@@ -77,14 +77,11 @@
         </div>
     </header>
 
-
     <section id="home" class="hero">
-        
         <div class="hero-content">
             <p class="greeting">Hello, I'm</p>
             <h1 class="name">Buvanraj V</h1>
-        
-            <p class="bio">Pre-Final Year B.Tech-IT @ RMKEC | Full Stack Developer • AI & Machine Learning Enthusiast | React.js • Java • JavaScript | Turning Ideas into AI-Powered Applications
+            <p class="bio">Pre-Final Year B.Tech-IT @ RMKEC | Full Stack Developer &bull; AI &amp; Machine Learning Enthusiast | React.js &bull; Java &bull; JavaScript | Turning Ideas into AI-Powered Applications</p>
             <div class="hero-buttons">
                 <a href="#projects" class="btn-primary">View Projects</a>
                 <a href="#contact" class="btn-outline">Contact Me</a>
@@ -98,10 +95,9 @@
                     <circle cx="12" cy="7" r="4"></circle>
                 </svg>
             </a>
-            <a href="https://www.linkedin.com/in/buvanraj-v-/" target="_blank" class="icon-circle" title="LinkedIn">
+            <a href="https://www.linkedin.com/in/buvanraj-v-/" target="_blank" rel="noopener noreferrer" class="icon-circle" title="LinkedIn">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="blue">
-                    <path
-                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                 </svg>
             </a>
             <a href="#contact" class="icon-circle" title="Download Resume">
@@ -112,18 +108,13 @@
                 </svg>
             </a>
         </div>
-
-
-        </div>
     </section>
 
-  
     <section id="about" class="section about-section" data-aos="fade-up">
         <div class="container">
             <h2 class="section-title">
                 <span class="title-part-1">About</span> <span class="title-part-2">Me</span>
             </h2>
-            
 
             <div class="about-content">
                 <div class="about-illustration">
@@ -135,37 +126,22 @@
                 </div>
 
                 <div class="about-text">
-                    <h3 class="about-heading"> Full-Stack Developer & AI Enthusiast</h3>
-                  <p class="about-paragraph">
-                       <p class="about-paragraph">
-    I'm a B.Tech Information Technology student at R.M.K. Engineering College with a strong interest in software development, web technologies, and artificial intelligence.
-
-
-I specialize in building responsive and user-friendly web applications using React.js, JavaScript, HTML, and CSS, while continuously expanding my knowledge of modern development practices and technologies.
-
-Through academic projects, internships, and self-learning, I have developed strong problem-solving skills and a passion for creating technology-driven solutions. I enjoy turning ideas into practical applications and am always eager to learn, innovate, and take on new challenges.
-
-Currently, I am seeking opportunities to apply my skills, gain industry experience, and contribute to impactful projects while growing as a software developer.
-
-
-</p>
- 
-                    </p>
-                    
-                
+                    <h3 class="about-heading">Full-Stack Developer &amp; AI Enthusiast</h3>
+                    <p class="about-paragraph">I'm a B.Tech Information Technology student at R.M.K. Engineering College with a strong interest in software development, web technologies, and artificial intelligence.</p>
+                    <p class="about-paragraph">I specialize in building responsive and user-friendly web applications using React.js, JavaScript, HTML, and CSS, while continuously expanding my knowledge of modern development practices and technologies.</p>
+                    <p class="about-paragraph">Through academic projects, internships, and self-learning, I have developed strong problem-solving skills and a passion for creating technology-driven solutions. I enjoy turning ideas into practical applications and am always eager to learn, innovate, and take on new challenges.</p>
+                    <p class="about-paragraph">Currently, I am seeking opportunities to apply my skills, gain industry experience, and contribute to impactful projects while growing as a software developer.</p>
                 </div>
             </div>
         </div>
     </section>
-
 
     <section id="skills" class="section skills-section" data-aos="fade-up">
         <div class="container">
             <div class="skills-attributes">
                 <div class="attribute-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="attribute-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <polyline points="16 18 22 12 16 6"></polyline>
                             <polyline points="8 6 2 12 8 18"></polyline>
                         </svg>
@@ -175,8 +151,7 @@ Currently, I am seeking opportunities to apply my skills, gain industry experien
                 </div>
                 <div class="attribute-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="attribute-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
                             <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
                             <line x1="6" y1="1" x2="6" y2="4"></line>
@@ -189,11 +164,8 @@ Currently, I am seeking opportunities to apply my skills, gain industry experien
                 </div>
                 <div class="attribute-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="attribute-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path
-                                d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z">
-                            </path>
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
                         </svg>
                     </div>
                     <h4>Project-Based Learning</h4>
@@ -201,12 +173,11 @@ Currently, I am seeking opportunities to apply my skills, gain industry experien
                 </div>
                 <div class="attribute-card" data-aos="fade-up" data-aos-delay="400">
                     <div class="attribute-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M5 12h14M12 5l7 7-7 7"></path>
                         </svg>
                     </div>
-                    <h4>Adaptability & Growth</h4>
+                    <h4>Adaptability &amp; Growth</h4>
                     <p>Quickly learning and implementing new technologies</p>
                 </div>
             </div>
@@ -218,9 +189,8 @@ Currently, I am seeking opportunities to apply my skills, gain industry experien
             <p class="section-subtitle">Technologies and tools I work with</p>
 
             <div class="skills-container">
-               
                 <div class="skills-category frontend" data-aos="fade-up" data-aos-delay="100">
-                    <h3 class="category-title">🌐 Frontend Development</h3>
+                    <h3 class="category-title">Frontend Development</h3>
                     <div class="skills-tags">
                         <span class="skill-tag">HTML5</span>
                         <span class="skill-tag">CSS3</span>
@@ -231,9 +201,8 @@ Currently, I am seeking opportunities to apply my skills, gain industry experien
                     </div>
                 </div>
 
-     
                 <div class="skills-category backend" data-aos="fade-up" data-aos-delay="200">
-                    <h3 class="category-title">⚙️ Backend Development</h3>
+                    <h3 class="category-title">Backend Development</h3>
                     <div class="skills-tags">
                         <span class="skill-tag">Node.js</span>
                         <span class="skill-tag">Express.js</span>
@@ -245,9 +214,8 @@ Currently, I am seeking opportunities to apply my skills, gain industry experien
                     </div>
                 </div>
 
-              
                 <div class="skills-category aiml" data-aos="fade-up" data-aos-delay="300">
-                    <h3 class="category-title">🤖 AI & Machine Learning</h3>
+                    <h3 class="category-title">AI &amp; Machine Learning</h3>
                     <div class="skills-tags">
                         <span class="skill-tag">Python</span>
                         <span class="skill-tag">XGBoost</span>
@@ -255,13 +223,12 @@ Currently, I am seeking opportunities to apply my skills, gain industry experien
                         <span class="skill-tag">LSTM Neural Networks</span>
                         <span class="skill-tag">SHAP Explainability</span>
                         <span class="skill-tag">Scikit-learn</span>
-                        <span class="skill-tag">NumPy & Pandas</span>
+                        <span class="skill-tag">NumPy &amp; Pandas</span>
                     </div>
                 </div>
 
-          
                 <div class="skills-category tools" data-aos="fade-up" data-aos-delay="400">
-                    <h3 class="category-title">🛠️ Tools & Platforms</h3>
+                    <h3 class="category-title">Tools &amp; Platforms</h3>
                     <div class="skills-tags">
                         <span class="skill-tag">Vite</span>
                         <span class="skill-tag">Recharts</span>
@@ -276,15 +243,12 @@ Currently, I am seeking opportunities to apply my skills, gain industry experien
         </div>
     </section>
 
-
-
-    
     <section id="experience" class="section experience-section" data-aos="fade-up">
         <div class="container">
             <h2 class="section-title">
                 <span class="title-part-1">My</span> <span class="title-part-2">Experience</span>
             </h2>
-           
+
             <div class="experience-grid">
                 <div class="experience-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="experience-icon-area">
@@ -309,18 +273,11 @@ Currently, I am seeking opportunities to apply my skills, gain industry experien
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-    <section id="experience" class="section experience-section" data-aos="fade-up">
-        <div class="container">
-          
-           
-            <div class="experience-grid">
-                <div class="experience-card" data-aos="fade-up" data-aos-delay="100">
+
+                <div class="experience-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="experience-icon-area">
                         <div class="experience-icon">
-                            <img src="lb-26.jpeg" alt="Ladybird Web Solution Pvt Ltd " class="experience-logo-img">
+                            <img src="lb-26.jpeg" alt="Ladybird Web Solution Pvt Ltd" class="experience-logo-img">
                         </div>
                     </div>
                     <div class="experience-body">
@@ -328,10 +285,11 @@ Currently, I am seeking opportunities to apply my skills, gain industry experien
                             <h3>Frontend Developer Intern</h3>
                             <span class="experience-date">May 2026 - June 2026</span>
                         </div>
-                        <p class="company-name">Ladybird Web Solution Pvt Ltd .</p>
-                        <p class="experience-description">A fully responsive multi-page business website for a fictional handcrafted leather & woodcraft shop based in Dharmapuri, Tamil Nadu — built with pure HTML, CSS & Bootstrap 5. No build tools. No backend. Just two files.</p>
-                            <span class="exp-tag">Html</span>
-                            <span class="exp-tag">Css</span>
+                        <p class="company-name">Ladybird Web Solution Pvt Ltd.</p>
+                        <p class="experience-description">Built a fully responsive multi-page business website for a fictional handcrafted leather &amp; woodcraft shop based in Dharmapuri, Tamil Nadu, using pure HTML, CSS &amp; Bootstrap 5, with no build tools and no backend.</p>
+                        <div class="experience-tags">
+                            <span class="exp-tag">HTML</span>
+                            <span class="exp-tag">CSS</span>
                             <span class="exp-tag">Bootstrap</span>
                         </div>
                     </div>
@@ -340,19 +298,16 @@ Currently, I am seeking opportunities to apply my skills, gain industry experien
         </div>
     </section>
 
-   
     <section id="education" class="section education-section" data-aos="fade-up">
         <div class="container">
             <h2 class="section-title">
-                <span class="title-part-1">Education</span> <span class="title-part-2">& Certifications</span>
+                <span class="title-part-1">Education</span> <span class="title-part-2">&amp; Certifications</span>
             </h2>
-        
 
             <div class="education-content">
                 <div class="education-column" data-aos="fade-right">
                     <div class="column-header">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
                             <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
                         </svg>
@@ -360,8 +315,7 @@ Currently, I am seeking opportunities to apply my skills, gain industry experien
                     </div>
                     <div class="education-card">
                         <div class="card-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
                                 <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
                             </svg>
@@ -369,24 +323,21 @@ Currently, I am seeking opportunities to apply my skills, gain industry experien
                         <div class="card-content">
                             <h4>B.Tech - Information Technology</h4>
                             <p class="institution">R.M.K. Engineering College</p>
-                             <span class="year">2024-2028</span>
+                            <span class="year">2024-2028</span>
                             <p class="status">Present - 7.73 CGPA</p>
-                            <p class="description">Pursuing Bachelor of Technology in Information Technology with focus
-                                on web development and software engineering.</p>
+                            <p class="description">Pursuing Bachelor of Technology in Information Technology with focus on web development and software engineering.</p>
                         </div>
                     </div>
                     <div class="education-card">
                         <div class="card-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
                                 <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
                             </svg>
-                            
                         </div>
                         <div class="card-content">
                             <h4>Kongu Matriculation Higher Secondary School</h4>
-                             <span class="year">2023-2024</span>
+                            <span class="year">2023-2024</span>
                             <p class="institution">Morappur</p>
                             <p class="status">Completed - 89.67% grade</p>
                             <p class="description">Completed Higher Secondary Education with a strong academic foundation.</p>
@@ -396,8 +347,7 @@ Currently, I am seeking opportunities to apply my skills, gain industry experien
 
                 <div class="certifications-column" data-aos="fade-left">
                     <div class="column-header">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
                             <polyline points="14 2 14 8 20 8"></polyline>
                             <line x1="16" y1="13" x2="8" y2="13"></line>
@@ -408,19 +358,17 @@ Currently, I am seeking opportunities to apply my skills, gain industry experien
                     </div>
                     <div class="certification-card">
                         <div class="card-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
                                 <polyline points="14 2 14 8 20 8"></polyline>
                             </svg>
                         </div>
                         <div class="card-content">
                             <h4>Infosys Springboard</h4>
-                          
                             <div class="certificate-details">
                                 <h5>Completed certificates</h5>
                                 <ul>
-                                    <li>Internship 6.O(Batch 13)</li>
+                                    <li>Internship 6.O (Batch 13)</li>
                                     <li>Java Developer Certification</li>
                                     <li>Springboard Artificial Intelligence Foundation</li>
                                     <li>Artificial Intelligence Primer Certification</li>
@@ -433,32 +381,27 @@ Currently, I am seeking opportunities to apply my skills, gain industry experien
                     </div>
                     <div class="certification-card">
                         <div class="card-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
                                 <polyline points="14 2 14 8 20 8"></polyline>
                             </svg>
                         </div>
                         <div class="card-content">
                             <h4>Oracle Certification</h4>
-                        
                             <div class="certificate-details">
                                 <h5>Completed certificates</h5>
                                 <ul>
                                     <li>Generative AI Professional</li>
                                     <li>AI Foundations Associate</li>
                                     <li>Oracle AI Data Platform Essentials</li>
-
                                 </ul>
                             </div>
                         </div>
                         <span class="year">2024-2026</span>
                     </div>
-
                     <div class="certification-card">
                         <div class="card-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
                                 <polyline points="14 2 14 8 20 8"></polyline>
                             </svg>
@@ -487,9 +430,8 @@ Currently, I am seeking opportunities to apply my skills, gain industry experien
             <h2 class="section-title">
                 <span class="title-part-1">Featured</span> <span class="title-part-2">Projects</span>
             </h2>
-        
+
             <div class="projects-grid">
-       
                 <div class="project-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="project-icon-area">
                         <div class="project-icon">
@@ -505,20 +447,19 @@ Currently, I am seeking opportunities to apply my skills, gain industry experien
                     </div>
                     <div class="project-body">
                         <h3>Profile Management System</h3>
-                        <span class="year">Dec-2025</span>
+                        <span class="year">Dec 2025</span>
                         <div class="project-preview-container">
-                            <img src="pms.png" alt="Project Management System Preview Dashboard Mockup" class="project-preview-image">
+                            <img src="pms.png" alt="Profile Management System dashboard preview" class="project-preview-image">
                         </div>
-                        <p>Engineered a Full-stack Profile Management application with complete CRUD functionality, built on React.js with component-based architecture for scalable state management.</p>
+                        <p>Engineered a full-stack Profile Management application with complete CRUD functionality, built on React.js with component-based architecture for scalable state management.</p>
                         <div class="project-tags">
                             <span class="tag">HTML</span>
                             <span class="tag">CSS</span>
                             <span class="tag">JavaScript</span>
                         </div>
                         <div class="project-links">
-                            <a href=" https://profileretriever.vercel.app/" class="project-link" target="_blank" rel="noopener noreferrer">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="red"
-                                    stroke-width="2">
+                            <a href="https://profileretriever.vercel.app/" class="project-link" target="_blank" rel="noopener noreferrer">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="red" stroke-width="2">
                                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
                                     <polyline points="15 3 21 3 21 9"></polyline>
                                     <line x1="10" y1="14" x2="21" y2="3"></line>
@@ -527,16 +468,14 @@ Currently, I am seeking opportunities to apply my skills, gain industry experien
                             </a>
                             <a href="https://github.com/Buvan-Buddu/PMS" class="project-link" target="_blank" rel="noopener noreferrer">
                                 <svg width="16" height="16" viewBox="0 0 24 24">
-                                    <path
-                                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                                 </svg>
-                                code
+                                Code
                             </a>
                         </div>
                     </div>
                 </div>
 
-     
                 <div class="project-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="project-icon-area">
                         <div class="project-icon">
@@ -550,10 +489,10 @@ Currently, I am seeking opportunities to apply my skills, gain industry experien
                         </div>
                     </div>
                     <div class="project-body">
-                        <h3>Transfer-IQ</h3> 
-                        <span class="year">Feb-Apr-2026</span>
+                        <h3>Transfer-IQ</h3>
+                        <span class="year">Feb-Apr 2026</span>
                         <div class="project-preview-container">
-                            <img src="iq.png" alt="Transfer-IQ Predictive Data Transfer Platform Preview Mockup" class="project-preview-image">
+                            <img src="iq.png" alt="Transfer-IQ predictive data transfer platform preview" class="project-preview-image">
                         </div>
                         <p>Developed an AI-powered data transfer assistant platform using FastAPI, XGBoost, and PyTorch LSTM models to enable intelligent automation and real-time predictions.</p>
                         <div class="project-tags">
@@ -566,8 +505,7 @@ Currently, I am seeking opportunities to apply my skills, gain industry experien
                         </div>
                         <div class="project-links">
                             <a href="https://agent-69ca9e0dfc584a295653694e--transfer-iq.netlify.app/" class="project-link" target="_blank" rel="noopener noreferrer">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="red"
-                                    stroke-width="2">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="red" stroke-width="2">
                                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
                                     <polyline points="15 3 21 3 21 9"></polyline>
                                     <line x1="10" y1="14" x2="21" y2="3"></line>
@@ -576,10 +514,9 @@ Currently, I am seeking opportunities to apply my skills, gain industry experien
                             </a>
                             <a href="https://github.com/Buvan-Buddu/Transfer-IQ" class="project-link" target="_blank" rel="noopener noreferrer">
                                 <svg width="16" height="16" viewBox="0 0 24 24">
-                                    <path
-                                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                            </svg>
-                                code
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                                </svg>
+                                Code
                             </a>
                         </div>
                     </div>
@@ -600,7 +537,7 @@ Currently, I am seeking opportunities to apply my skills, gain industry experien
                         <h3>HealthPulse-AI</h3>
                         <span class="year">2025-2026</span>
                         <div class="project-preview-container">
-                            <img src="hp.png" alt="HealthPulse-AI Assistant Dashboard Preview Mockup" class="project-preview-image">
+                            <img src="hp.png" alt="HealthPulse-AI assistant dashboard preview" class="project-preview-image">
                         </div>
                         <p>Built a full-stack health assistant web app with Gemini AI, weather and air-quality integrations, secure JWT authentication, and responsive dashboards for personalized insights.</p>
                         <div class="project-tags">
@@ -612,9 +549,8 @@ Currently, I am seeking opportunities to apply my skills, gain industry experien
                             <span class="tag">MongoDB</span>
                         </div>
                         <div class="project-links">
-                            <a href=" https://healthpluse-ai.netlify.app/" class="project-link" target="_blank" rel="noopener noreferrer">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="red"
-                                    stroke-width="2">
+                            <a href="https://healthpluse-ai.netlify.app/" class="project-link" target="_blank" rel="noopener noreferrer">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="red" stroke-width="2">
                                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
                                     <polyline points="15 3 21 3 21 9"></polyline>
                                     <line x1="10" y1="14" x2="21" y2="3"></line>
@@ -623,10 +559,9 @@ Currently, I am seeking opportunities to apply my skills, gain industry experien
                             </a>
                             <a href="https://github.com/akash14102006/Health-pulse-AI" class="project-link" target="_blank" rel="noopener noreferrer">
                                 <svg width="16" height="16" viewBox="0 0 24 24">
-                                    <path
-                                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                                 </svg>
-                                code
+                                Code
                             </a>
                         </div>
                     </div>
@@ -640,10 +575,9 @@ Currently, I am seeking opportunities to apply my skills, gain industry experien
             <h2 class="section-title">
                 <span class="title-part-1">My</span> <span class="title-part-2">Profiles</span>
             </h2>
-    
 
             <div class="others-grid">
-                <a href="https://github.com/Buvan-Buddu" target="_blank" class="other-link-card" rel="noopener noreferrer">
+                <a href="https://github.com/Buvan-Buddu" target="_blank" rel="noopener noreferrer" class="other-link-card">
                     <div class="other-link-icon">
                         <svg viewBox="0 0 24 24" width="28" height="28" fill="black" aria-hidden="true">
                             <path d="M12 0C5.372 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.6.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.562 21.8 24 17.302 24 12c0-6.627-5.373-12-12-12z"/>
@@ -653,7 +587,7 @@ Currently, I am seeking opportunities to apply my skills, gain industry experien
                     <p>Explore repositories</p>
                 </a>
 
-                <a href="https://www.linkedin.com/in/buvanraj-v-/" target="_blank" class="other-link-card" rel="noopener noreferrer">
+                <a href="https://www.linkedin.com/in/buvanraj-v-/" target="_blank" rel="noopener noreferrer" class="other-link-card">
                     <div class="other-link-icon">
                         <svg viewBox="0 0 24 24" width="28" height="28" fill="blue" aria-hidden="true">
                             <path d="M19 0H5C2.239 0 0 2.239 0 5v14c0 2.762 2.239 5 5 5h14c2.761 0 5-2.238 5-5V5c0-2.761-2.239-5-5-5zM7.5 19H4.5V9h3v10zM6 7.732c-.966 0-1.75-.79-1.75-1.764S5.034 4.2 6 4.2s1.75.79 1.75 1.768S6.966 7.732 6 7.732zM20 19h-3v-5.604c0-3.368-4-3.113-4 0V19h-3V9h3v1.765C14.396 8.179 20 7.99 20 12.246V19z"/>
@@ -674,17 +608,17 @@ Currently, I am seeking opportunities to apply my skills, gain industry experien
                     <p>Send a message</p>
                 </a>
 
-                <a href="https://leetcode.com/u/BUVANRAJ/" target="_blank" class="other-link-card" rel="noopener noreferrer">
+                <a href="https://leetcode.com/u/BUVANRAJ/" target="_blank" rel="noopener noreferrer" class="other-link-card">
                     <div class="other-link-icon">
                         <svg viewBox="0 0 24 24" width="28" height="28" fill="orange" aria-hidden="true">
                             <path d="M12 2l5 5-1.5 1.5L12 5 8.5 8.5 7 7l5-5zM6 13v7h2v-5h8v5h2v-7H6z"/>
                         </svg>
                     </div>
                     <h3>LeetCode</h3>
-                    <p>Problems & solutions</p>
+                    <p>Problems &amp; solutions</p>
                 </a>
 
-                <a href="https://x.com/VBuvanraj" target="_blank" class="other-link-card" rel="noopener noreferrer">
+                <a href="https://x.com/VBuvanraj" target="_blank" rel="noopener noreferrer" class="other-link-card">
                     <div class="other-link-icon">
                         <svg viewBox="0 0 24 24" width="28" height="28" fill="black" aria-hidden="true">
                             <path d="M3 3l18 18M21 3L3 21" stroke="black" stroke-width="1.6" fill="none"/>
@@ -694,39 +628,36 @@ Currently, I am seeking opportunities to apply my skills, gain industry experien
                     <p>Follow updates</p>
                 </a>
 
-                <a href="https://unstop.com/u/buvanv1680" target="_blank" class="other-link-card" rel="noopener noreferrer">
+                <a href="https://unstop.com/u/buvanv1680" target="_blank" rel="noopener noreferrer" class="other-link-card">
                     <div class="other-link-icon">
                         <svg viewBox="0 0 24 24" width="28" height="28" fill="blue" aria-hidden="true">
                             <path d="M12 2l2.3 6.5H21l-5.2 3.8L17 22l-5-3.5L7 22l1.2-9.7L3 8.5h6.7L12 2z"/>
                         </svg>
                     </div>
                     <h3>Unstop</h3>
-                    <p>Competitions & Achievements</p>
+                    <p>Competitions &amp; Achievements</p>
                 </a>
             </div>
         </div>
     </section>
 
-    
-
-    x
     <section id="contact" class="section contact-section" data-aos="fade-up">
         <div class="container">
             <h2 class="section-title">
                 <span class="title-part-1">Get In</span> <span class="title-part-2">Touch</span>
             </h2>
-           
+
             <div class="contact-card">
                 <div class="contact-location">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="red" stroke-width="2">
                         <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                         <circle cx="12" cy="10" r="3"></circle>
                     </svg>
-                    <span><b>CHENNAI</b> , India</span>
+                    <span><b>CHENNAI</b>, India</span>
                 </div>
 
                 <h3 class="contact-heading">Let's work together!</h3>
-               
+
                 <div class="contact-cta-buttons">
                     <button class="btn-say-hello" id="openContactModal">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -749,49 +680,42 @@ Currently, I am seeking opportunities to apply my skills, gain industry experien
                 </div>
 
                 <div class="contact-social">
-                    <a href="https://github.com/Buvan-Buddu" target="_blank" class="social-icon">
+                    <a href="https://github.com/Buvan-Buddu" target="_blank" rel="noopener noreferrer" class="social-icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="black">
-                            <path
-                                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                         </svg>
                     </a>
-                    <a href="https://www.linkedin.com/in/buvanraj-v-/" target="_blank" class="social-icon">
+                    <a href="https://www.linkedin.com/in/buvanraj-v-/" target="_blank" rel="noopener noreferrer" class="social-icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="blue">
-                            <path
-                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                         </svg>
                     </a>
                     <a href="mailto:vbuvanraj@gmail.com" class="social-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black"
-                            stroke-width="2">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
-                            </path>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                             <polyline points="22,6 12,13 2,6"></polyline>
                         </svg>
                     </a>
                 </div>
+
                 <a href="Buvanraj-resume-26.pdf" download class="contact-download-resume">
-                    <button class="btn-download-resume">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="black"
-                            stroke-width="2">
+                    <button class="btn-download-resume" type="button">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2">
                             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                             <polyline points="7 10 12 15 17 10"></polyline>
                             <line x1="12" y1="15" x2="12" y2="3"></line>
                         </svg>
                         Download Resume
                     </button>
-                  
                 </a>
-                
             </div>
-            
         </div>
     </section>
 
     <div id="contactModal" class="contact-modal">
         <div class="modal-overlay"></div>
         <div class="modal-content">
-            <button class="modal-close" id="closeContactModal">
+            <button class="modal-close" id="closeContactModal" aria-label="Close contact form">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2">
                     <line x1="18" y1="6" x2="6" y2="18"></line>
                     <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -799,7 +723,6 @@ Currently, I am seeking opportunities to apply my skills, gain industry experien
             </button>
             <div class="modal-header">
                 <h2>Send Me a Message</h2>
-
             </div>
             <form id="contactForm" class="contact-form-modal">
                 <div class="form-group">
@@ -812,19 +735,15 @@ Currently, I am seeking opportunities to apply my skills, gain industry experien
                     <input type="email" id="contactEmail" name="email" required placeholder="your.email@example.com">
                 </div>
 
-
-
                 <div class="form-group">
                     <label for="contactMessage">Message <span class="required">*</span></label>
-                    <textarea id="contactMessage" name="message" rows="5" required
-                        placeholder="Tell me about your project or whatever you want to say..."></textarea>
+                    <textarea id="contactMessage" name="message" rows="5" required placeholder="Tell me about your project or whatever you want to say..."></textarea>
                 </div>
 
                 <div class="form-actions">
                     <button type="button" class="btn-cancel" id="cancelContactForm">Cancel</button>
                     <button type="submit" class="btn-submit">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <line x1="22" y1="2" x2="11" y2="13"></line>
                             <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
                         </svg>
@@ -833,11 +752,10 @@ Currently, I am seeking opportunities to apply my skills, gain industry experien
                 </div>
             </form>
         </div>
-        
     </div>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
     <script src="script.js"></script>
